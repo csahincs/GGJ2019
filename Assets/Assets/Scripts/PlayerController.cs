@@ -1,9 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
-public class MovementController : MonoBehaviour, IPointerClickHandler
+public class PlayerController : MonoBehaviour
 {
     //SmoothDamp Variables
     private float smoothTime = 0.5f;
@@ -15,12 +14,16 @@ public class MovementController : MonoBehaviour, IPointerClickHandler
     // Double Click Variables
     private float doubleClickTimeLimit = 0.25f;
 
+    private Rigidbody rb;
+    private bool climbing = false;
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(InputListener());
         currentPosition = transform.position;
         targetPosition = currentPosition;
+
+        rb = gameObject.GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -28,7 +31,11 @@ public class MovementController : MonoBehaviour, IPointerClickHandler
     {
         currentPosition = transform.position;
         if (targetPosition == currentPosition)
+        {
+            if (climbing)
+                rb.useGravity = false;
             return;
+        }
         else
             transform.position = Vector3.SmoothDamp(currentPosition, targetPosition, ref speed, smoothTime, maxSpeed);
     }
@@ -83,9 +90,19 @@ public class MovementController : MonoBehaviour, IPointerClickHandler
         maxSpeed = 2f;
     }
 
-    public void OnPointerClick(PointerEventData pointerEventData)
+    void OnCollisionStay(Collision dataFromCollision)
     {
-        Debug.Log("asdsa");
+        if (dataFromCollision.gameObject.name != "Ladder")
+        {
+            return;
+        }
+        else
+            if (Input.GetMouseButtonDown(1))
+            {
+                climbing = true;
+                rb.useGravity = false;
+                targetPosition = new Vector3(currentPosition.x, currentPosition.y + 3, currentPosition.z);
+            }
     }
-
 }
+
