@@ -19,41 +19,69 @@ public class PlayerController : MonoBehaviour
     
     private bool canClimb = false;
     private bool climbing = false;
+
+    public bool isIdling = true;
+    public bool isWalking = false;
+    public bool isRuning = false;
+
     private float afterFloatX = 0.5f;
+
+    Animator animator;
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         StartCoroutine(InputListener());
         targetPosition = transform.position;
 
         rb = gameObject.GetComponent<Rigidbody>();
         anim = gameObject.GetComponent<Animator>();
+
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
-        if (VectorEquality(targetPosition, transform.position))
+        animator.SetBool("isIdling", isIdling);
+        animator.SetBool("isWalking", isWalking);
+        animator.SetBool("isRuning", isRuning);
+
+        Debug.Log(isIdling);
+
+        if (Vector3.Distance(targetPosition, transform.position) <= 0.1f)
         {
             if (climbing)
             {
                 climbing = false;
                 targetPosition = new Vector3(transform.position.x + afterFloatX, transform.position.y, transform.position.z);
             }
-            return;
+
+            isIdling = true;
+            isWalking = false;
+            isRuning = false;
         }
         else
         {
             if (climbing)
+            {
                 rb.useGravity = false;
+                isIdling = false;
+                isWalking = false;
+                isRuning = false;
+            }
             else
+            {
                 rb.useGravity = true;
-            transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref speed, smoothTime, maxSpeed);
+                isIdling = false;
+            }
 
+            transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref speed, smoothTime, maxSpeed);
+            if (transform.position.x < targetPosition.x) transform.rotation = Quaternion.Euler(0, 90, 0);
+            else transform.rotation = Quaternion.Euler(0, -90, 0);
         }
     }
 
-    void OnGUI()
+    private void OnGUI()
     {
         if (!climbing && Input.GetMouseButtonDown(0))
         {
@@ -101,6 +129,11 @@ public class PlayerController : MonoBehaviour
                 yield break;
             }
             count += Time.deltaTime;
+
+            isIdling = false;
+            isWalking = true;
+            isRuning = false;
+
             yield return null; 
         }
     }
@@ -108,6 +141,9 @@ public class PlayerController : MonoBehaviour
     private void DoubleClick()
     {
         maxSpeed = 2f;
+        isIdling = false;
+        isWalking = false;
+        isRuning = true;
     }
 
     void OnTriggerEnter(Collider dataFromCollider)
