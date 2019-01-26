@@ -111,6 +111,7 @@ GameObject:
   - component: {fileID: 2805295962300070118}
   - component: {fileID: 2805295962300070120}
   - component: {fileID: 2805295962300070119}
+  - component: {fileID: 8775597388283560673}
   m_Layer: 5
   m_Name: UIMap
   m_TagString: Untagged
@@ -126,8 +127,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2805295962300070117}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 100}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 50}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 2805295962259677010}
   m_RootOrder: 1
@@ -135,7 +136,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -200, y: -200}
+  m_SizeDelta: {x: -100, y: -100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2805295962300070120
 CanvasRenderer:
@@ -174,6 +175,25 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+--- !u!95 &8775597388283560673
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2805295962300070117}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 65957d073334b8f4bbd3c2ed4599027d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2805295962444561594
 GameObject:
   m_ObjectHideFlags: 0
@@ -261,3 +281,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa36a46dd1a26394ea9db629e7aa02a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speedMult: 2
