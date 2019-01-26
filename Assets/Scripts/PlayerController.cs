@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -26,7 +27,12 @@ public class PlayerController : MonoBehaviour
 
     private float afterFloatX = 0.5f;
 
-    Animator animator;
+    private NavMeshAgent agent;
+    private Animator animator;
+    private Inventory inventory;
+
+    private Item collidingItem;
+
     // Start is called before the first frame update
     private void Start()
     {
@@ -36,49 +42,41 @@ public class PlayerController : MonoBehaviour
         rb = gameObject.GetComponent<Rigidbody>();
         anim = gameObject.GetComponent<Animator>();
 
-        animator = GetComponent<Animator>();
+        animator = gameObject.GetComponent<Animator>();
+        inventory = gameObject.GetComponent<Inventory>();
+
+        agent = GetComponent<NavMeshAgent>();
+        agent.destination = transform.position;
     }
 
     // Update is called once per frame
     private void FixedUpdate()
     {
-        animator.SetBool("isIdling", isIdling);
-        animator.SetBool("isWalking", isWalking);
-        animator.SetBool("isRuning", isRuning);
+        if (agent.destination == transform.position)
+            agent.speed = 0f;
 
-        Debug.Log(isIdling);
-
-        if (Vector3.Distance(targetPosition, transform.position) <= 0.1f)
+        if (agent.speed > 1)
         {
-            if (climbing)
-            {
-                climbing = false;
-                targetPosition = new Vector3(transform.position.x + afterFloatX, transform.position.y, transform.position.z);
-            }
-
-            isIdling = true;
+            isRuning = true;
             isWalking = false;
+            isIdling = false;
+        }
+        else if (agent.speed > 0)
+        {
+            isIdling = false;
+            isWalking = true;
             isRuning = false;
         }
         else
         {
-            if (climbing)
-            {
-                rb.useGravity = false;
-                isIdling = false;
-                isWalking = false;
-                isRuning = false;
-            }
-            else
-            {
-                rb.useGravity = true;
-                isIdling = false;
-            }
-
-            transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref speed, smoothTime, maxSpeed);
-            if (transform.position.x < targetPosition.x) transform.rotation = Quaternion.Euler(0, 90, 0);
-            else transform.rotation = Quaternion.Euler(0, -90, 0);
+            isIdling = true;
+            isWalking = false;
+            isRuning = false;
         }
+
+        animator.SetBool("isIdling", isIdling);
+        animator.SetBool("isWalking", isWalking);
+        animator.SetBool("isRuning", isRuning);
     }
 
     private void OnGUI()
@@ -102,6 +100,33 @@ public class PlayerController : MonoBehaviour
             Debug.Log(targetPosition);
         }
 
+        if (Event.current.Equals(Event.KeyboardEvent("space")))
+        {
+            if (collidingItem != null)
+            {
+                switch (collidingItem.itemType)
+                {
+                    case ITEM_TYPES.WOOD:
+                        inventory.AddWood(collidingItem);
+                        break;
+                    case ITEM_TYPES.METAL:
+                        inventory.AddMetal(collidingItem);
+                        break;
+                    case ITEM_TYPES.CLOTH:
+                        inventory.AddCloth(collidingItem);
+                        break;
+                    case ITEM_TYPES.TAP:
+                        inventory.AddTap(collidingItem);
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException();
+                }
+
+                Destroy(collidingItem.gameObject);
+                collidingItem = null;
+                inventory.PrintItems();
+            }
+        }
     }
 
     private IEnumerator InputListener()
@@ -117,8 +142,18 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator ClickEvent()
     {
-        maxSpeed = 1f;
+        agent.speed = 1f;
         yield return new WaitForEndOfFrame();
+
+        RaycastHit hit;
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+        if (Physics.Raycast(ray, out hit))
+        {
+            agent.speed = 1;
+            agent.destination = hit.point;
+        }
+
 
         float count = 0f;
         while (count < doubleClickTimeLimit)
@@ -130,30 +165,30 @@ public class PlayerController : MonoBehaviour
             }
             count += Time.deltaTime;
 
-            isIdling = false;
-            isWalking = true;
-            isRuning = false;
-
-            yield return null; 
+            yield return null;
         }
     }
 
     private void DoubleClick()
     {
-        maxSpeed = 2f;
-        isIdling = false;
-        isWalking = false;
-        isRuning = true;
+        agent.speed = 2f;
     }
 
-    void OnTriggerEnter(Collider dataFromCollider)
+    public void OnTriggerEnter(Collider dataFromCollider)
     {
-        if (dataFromCollider.gameObject.name != "Ladder")
-            return;
-        else
+        if (dataFromCollider.gameObject.name == "Ladder")
         {
             canClimb = true;
-            Debug.Log("asda");
+        }
+
+        if (dataFromCollider.gameObject.tag == "Item")
+        {
+            collidingItem = dataFromCollider.gameObject.GetComponent<Item>();
+            Debug.Log(collidingItem.itemType);
+        }
+        else
+        {
+            collidingItem = null;
         }
     }
 
