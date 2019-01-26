@@ -1,21 +1,27 @@
 fileFormatVersion: 2
-guid: 32539eef4e76a5e429c709661471cb60
+guid: ec57c7434136c804f9389849b5e2d908
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: Cube
-    100002: Cube.001
-    100004: //RootNode
-    400000: Cube
-    400002: Cube.001
-    400004: //RootNode
-    2100000: Material
-    2300000: Cube
-    2300002: Cube.001
-    3300000: Cube
-    3300002: Cube.001
-    4300000: Cube.001
-    4300002: Cube
+    100000: arkaTekerler
+    100002: onTekerler
+    100004: sasi.001
+    100006: //RootNode
+    400000: arkaTekerler
+    400002: onTekerler
+    400004: sasi.001
+    400006: //RootNode
+    2100000: M_Body
+    2100002: M_Tire
+    2300000: arkaTekerler
+    2300002: onTekerler
+    2300004: sasi.001
+    3300000: arkaTekerler
+    3300002: onTekerler
+    3300004: sasi.001
+    4300000: sasi.001
+    4300002: arkaTekerler
+    4300004: onTekerler
   externalObjects: {}
   materials:
     importMaterials: 1

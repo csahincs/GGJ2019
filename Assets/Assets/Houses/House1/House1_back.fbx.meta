@@ -1,44 +1,14 @@
 fileFormatVersion: 2
-guid: a99ee00fce0f5244bb37193b1f5b2407
+guid: f27b9780d54baa24586f98803d42f8f1
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: camlar
-    100002: camurluk
-    100004: Cube
-    100006: Cylinder
-    100008: //RootNode
-    100010: kabin
-    100012: sasi
-    400000: camlar
-    400002: camurluk
-    400004: Cube
-    400006: Cylinder
-    400008: //RootNode
-    400010: kabin
-    400012: sasi
-    2100000: M_Others
-    2100002: M_Body
-    2100004: No Name
-    2100006: M_Cabin
-    2300000: camlar
-    2300002: camurluk
-    2300004: Cube
-    2300006: Cylinder
-    2300008: kabin
-    2300010: sasi
-    3300000: camlar
-    3300002: camurluk
-    3300004: Cube
-    3300006: Cylinder
-    3300008: kabin
-    3300010: sasi
-    4300000: Cylinder
-    4300002: Cube
-    4300004: camurluk
-    4300006: camlar
-    4300008: kabin
-    4300010: sasi
+    100000: //RootNode
+    400000: //RootNode
+    2100000: Material
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Cube
   externalObjects: {}
   materials:
     importMaterials: 1
