@@ -10,9 +10,11 @@ public class Inventory : MonoBehaviour
     private List<Item> taps;
     private List<Item> tires;
 
+    public int capacity = 100;
     public Sprite[] iconImages;
     public InventoryItemStack itemStack;
     public Transform itemContent;
+
 
     private void Start()
     {
@@ -54,7 +56,8 @@ public class Inventory : MonoBehaviour
 
     public void AddWood(Item item)
     {
-        woods.Add(item);
+        if(capacity < 100)
+            woods.Add(item);
     }
 
     public int WoodCount()
@@ -64,7 +67,11 @@ public class Inventory : MonoBehaviour
 
     public void AddMetal(Item item)
     {
-        metals.Add(item);
+        if (capacity < 100)
+        {
+            metals.Add(item);
+            capacity++;
+        }
     }
 
     public int MetalCount()
@@ -74,7 +81,11 @@ public class Inventory : MonoBehaviour
 
     public void AddCloth(Item item)
     {
-        cloths.Add(item);
+        if (capacity < 100)
+        {
+            cloths.Add(item);
+            capacity++;
+        }
     }
 
     public int ClothCount()
@@ -84,7 +95,11 @@ public class Inventory : MonoBehaviour
 
     public void AddTap(Item item)
     {
-        taps.Add(item);
+        if (capacity < 100)
+        {
+            taps.Add(item);
+            capacity++;
+        }
     }
 
     public int TapCount()
@@ -94,7 +109,11 @@ public class Inventory : MonoBehaviour
 
     public void AddTire(Item item)
     {
-        tires.Add(item);
+        if (capacity < 100)
+        {
+            tires.Add(item);
+            capacity++;
+        }
     }
 
     public int TireCount()
