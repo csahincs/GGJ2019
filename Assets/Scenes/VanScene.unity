@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -302,7 +302,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 250, y: 100}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &621934125
@@ -382,11 +382,11 @@ RectTransform:
   m_Father: {fileID: 2064287690}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 450, y: 0}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 60, y: 520}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &714069793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1391,36 +1391,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Van
       objectReference: {fileID: 0}
-    - target: {fileID: 7201821140210466178, guid: 0e7a7ff79c014c04ea16d1c07c00f750,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7201821141310969354, guid: 0e7a7ff79c014c04ea16d1c07c00f750,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7201821141577589812, guid: 0e7a7ff79c014c04ea16d1c07c00f750,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7201821141820047855, guid: 0e7a7ff79c014c04ea16d1c07c00f750,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7201821141961905916, guid: 0e7a7ff79c014c04ea16d1c07c00f750,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7201821141848132381, guid: 0e7a7ff79c014c04ea16d1c07c00f750,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7201821140420869645, guid: 0e7a7ff79c014c04ea16d1c07c00f750,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1476,6 +1446,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7201821141577589812, guid: 0e7a7ff79c014c04ea16d1c07c00f750,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7201821141310969354, guid: 0e7a7ff79c014c04ea16d1c07c00f750,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7201821140210466178, guid: 0e7a7ff79c014c04ea16d1c07c00f750,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7201821141820047855, guid: 0e7a7ff79c014c04ea16d1c07c00f750,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7201821141848132381, guid: 0e7a7ff79c014c04ea16d1c07c00f750,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7201821141961905916, guid: 0e7a7ff79c014c04ea16d1c07c00f750,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2039020116, guid: 0e7a7ff79c014c04ea16d1c07c00f750, type: 3}
     - {fileID: 611813511, guid: 0e7a7ff79c014c04ea16d1c07c00f750, type: 3}
@@ -1496,41 +1496,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: CraftManager
       objectReference: {fileID: 0}
-    - target: {fileID: 2758815434298247552, guid: 2e81652eaf92a65418da6aa8c24e043e,
-        type: 3}
-      propertyPath: userInventory
-      value: 
-      objectReference: {fileID: 621934125}
-    - target: {fileID: 2758815434298247552, guid: 2e81652eaf92a65418da6aa8c24e043e,
-        type: 3}
-      propertyPath: tires
-      value: 
-      objectReference: {fileID: 1554538868}
-    - target: {fileID: 2758815434298247552, guid: 2e81652eaf92a65418da6aa8c24e043e,
-        type: 3}
-      propertyPath: vanCabin
-      value: 
-      objectReference: {fileID: 1502322524}
-    - target: {fileID: 2758815434298247552, guid: 2e81652eaf92a65418da6aa8c24e043e,
-        type: 3}
-      propertyPath: shower
-      value: 
-      objectReference: {fileID: 1053598941}
-    - target: {fileID: 2758815434298247552, guid: 2e81652eaf92a65418da6aa8c24e043e,
-        type: 3}
-      propertyPath: upperBed
-      value: 
-      objectReference: {fileID: 1440373218}
-    - target: {fileID: 2758815434298247552, guid: 2e81652eaf92a65418da6aa8c24e043e,
-        type: 3}
-      propertyPath: lowerBedWithCabinet
-      value: 
-      objectReference: {fileID: 1297266555}
-    - target: {fileID: 2758815434298247552, guid: 2e81652eaf92a65418da6aa8c24e043e,
-        type: 3}
-      propertyPath: cabinet
-      value: 
-      objectReference: {fileID: 732005796}
     - target: {fileID: 7707632921791972716, guid: 2e81652eaf92a65418da6aa8c24e043e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1586,5 +1551,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2758815434298247552, guid: 2e81652eaf92a65418da6aa8c24e043e,
+        type: 3}
+      propertyPath: userInventory
+      value: 
+      objectReference: {fileID: 621934125}
+    - target: {fileID: 2758815434298247552, guid: 2e81652eaf92a65418da6aa8c24e043e,
+        type: 3}
+      propertyPath: tires
+      value: 
+      objectReference: {fileID: 1554538868}
+    - target: {fileID: 2758815434298247552, guid: 2e81652eaf92a65418da6aa8c24e043e,
+        type: 3}
+      propertyPath: vanCabin
+      value: 
+      objectReference: {fileID: 1502322524}
+    - target: {fileID: 2758815434298247552, guid: 2e81652eaf92a65418da6aa8c24e043e,
+        type: 3}
+      propertyPath: shower
+      value: 
+      objectReference: {fileID: 1053598941}
+    - target: {fileID: 2758815434298247552, guid: 2e81652eaf92a65418da6aa8c24e043e,
+        type: 3}
+      propertyPath: upperBed
+      value: 
+      objectReference: {fileID: 1440373218}
+    - target: {fileID: 2758815434298247552, guid: 2e81652eaf92a65418da6aa8c24e043e,
+        type: 3}
+      propertyPath: lowerBedWithCabinet
+      value: 
+      objectReference: {fileID: 1297266555}
+    - target: {fileID: 2758815434298247552, guid: 2e81652eaf92a65418da6aa8c24e043e,
+        type: 3}
+      propertyPath: cabinet
+      value: 
+      objectReference: {fileID: 732005796}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e81652eaf92a65418da6aa8c24e043e, type: 3}
