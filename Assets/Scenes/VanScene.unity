@@ -253,7 +253,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: 1}
-  m_SizeDelta: {x: 500, y: 100}
+  m_SizeDelta: {x: 250, y: 100}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &621934125
 MonoBehaviour:
@@ -267,6 +267,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d52a4a4df21340044ae18d5dc1e6a69d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  capacity: 100
   iconImages:
   - {fileID: 21300000, guid: 92043f372dc674940bc986b895137bec, type: 3}
   - {fileID: 21300000, guid: 8cffe4504d48d784aa1269ffe7fa4a0f, type: 3}
