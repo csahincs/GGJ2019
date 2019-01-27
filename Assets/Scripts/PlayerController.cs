@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
     private Animator anim;
     private float maxSpeed = 1f;
 
-    
+
     private bool canClimb = false;
     private bool climbing = false;
 
@@ -92,7 +92,7 @@ public class PlayerController : MonoBehaviour
                 targetPosition = new Vector3(objectPoint.x, transform.position.y, transform.position.z);
             }
         }
-        if(canClimb && Input.GetMouseButtonDown(1))
+        if (canClimb && Input.GetMouseButtonDown(1))
         {
             Debug.Log("asd");
             targetPosition = new Vector3(transform.position.x, transform.position.y + 3.2f, transform.position.z);
@@ -194,9 +194,9 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerExit(Collider dataFromCollider)
     {
-        if (dataFromCollider.gameObject.name != "Ladder")
-            return;
-        else
+        collidingItem = null;
+
+        if (dataFromCollider.gameObject.name == "Ladder")
         {
             canClimb = false;
             Debug.Log("123");
