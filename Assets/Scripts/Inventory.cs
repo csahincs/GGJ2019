@@ -10,6 +10,12 @@ public class Inventory : MonoBehaviour
     private List<Item> taps;
     private List<Item> tires;
 
+    public int capacity = 100;
+    public Sprite[] iconImages;
+    public InventoryItemStack itemStack;
+    public Transform itemContent;
+
+
     private void Start()
     {
         woods = new List<Item>();
@@ -17,11 +23,17 @@ public class Inventory : MonoBehaviour
         cloths = new List<Item>();
         taps = new List<Item>();
         tires = new List<Item>();
+<<<<<<< HEAD
+=======
+
+        SetTestItems();
+        Initialize();
+>>>>>>> 83741382b7bc477835a622d96c8bbd08918ead4b
     }
 
     public void SetTestItems()
     {
-        for (int itemIndex = 0; itemIndex < 500; itemIndex++)
+        for (int itemIndex = 0; itemIndex < 20; itemIndex++)
         {
             Item wood = new Item();
             wood.itemType = ITEM_TYPES.WOOD;
@@ -30,7 +42,11 @@ public class Inventory : MonoBehaviour
             Item metal = new Item();
             metal.itemType = ITEM_TYPES.METAL;
             metals.Add(metal);
+<<<<<<< HEAD
             
+=======
+
+>>>>>>> 83741382b7bc477835a622d96c8bbd08918ead4b
             Item cloth = new Item();
             cloth.itemType = ITEM_TYPES.CLOTH;
             cloths.Add(cloth);
@@ -38,7 +54,11 @@ public class Inventory : MonoBehaviour
             Item tap = new Item();
             tap.itemType = ITEM_TYPES.TAP;
             taps.Add(tap);
+<<<<<<< HEAD
             
+=======
+
+>>>>>>> 83741382b7bc477835a622d96c8bbd08918ead4b
             Item tire = new Item();
             tire.itemType = ITEM_TYPES.TIRE;
             tires.Add(tire);
@@ -47,7 +67,8 @@ public class Inventory : MonoBehaviour
 
     public void AddWood(Item item)
     {
-        woods.Add(item);
+        if(capacity < 100)
+            woods.Add(item);
     }
 
     public int WoodCount()
@@ -57,7 +78,11 @@ public class Inventory : MonoBehaviour
 
     public void AddMetal(Item item)
     {
-        metals.Add(item);
+        if (capacity < 100)
+        {
+            metals.Add(item);
+            capacity++;
+        }
     }
 
     public int MetalCount()
@@ -67,7 +92,11 @@ public class Inventory : MonoBehaviour
 
     public void AddCloth(Item item)
     {
-        cloths.Add(item);
+        if (capacity < 100)
+        {
+            cloths.Add(item);
+            capacity++;
+        }
     }
 
     public int ClothCount()
@@ -77,7 +106,11 @@ public class Inventory : MonoBehaviour
 
     public void AddTap(Item item)
     {
-        taps.Add(item);
+        if (capacity < 100)
+        {
+            taps.Add(item);
+            capacity++;
+        }
     }
 
     public int TapCount()
@@ -87,7 +120,11 @@ public class Inventory : MonoBehaviour
 
     public void AddTire(Item item)
     {
-        tires.Add(item);
+        if (capacity < 100)
+        {
+            tires.Add(item);
+            capacity++;
+        }
     }
 
     public int TireCount()
@@ -111,5 +148,54 @@ public class Inventory : MonoBehaviour
         Debug.Log("Cloths: " + cloths.Count + " PCS");
         Debug.Log("Taps: " + taps.Count + " PCS");
         Debug.Log("Tires: " + tires.Count + " PCS");
+    }
+
+    public void Initialize()
+    {
+        int woodCount = woods.Count / 10;
+        int metalCount = metals.Count / 10;
+        int clothCount = cloths.Count / 10;
+        int tapCount = taps.Count / 10;
+
+        for (int i = 0; i < woodCount; i++)
+        {
+            InventoryItemStack woodItem = Instantiate(itemStack) as InventoryItemStack;
+            woodItem.gameObject.transform.SetParent(itemContent, false);
+            woodItem.Initialize(iconImages[0], 10);
+        }
+        InventoryItemStack lastWoodItem = Instantiate(itemStack) as InventoryItemStack;
+        lastWoodItem.gameObject.transform.SetParent(itemContent, false);
+        lastWoodItem.Initialize(iconImages[0], woods.Count - (woodCount * 10));
+
+
+        for (int i = 0; i < woodCount; i++)
+        {
+            InventoryItemStack metalItem = Instantiate(itemStack) as InventoryItemStack;
+            metalItem.gameObject.transform.SetParent(itemContent, false);
+            metalItem.Initialize(iconImages[1], 10);
+        }
+        InventoryItemStack lastMetalItem = Instantiate(itemStack) as InventoryItemStack;
+        lastMetalItem.gameObject.transform.SetParent(itemContent, false);
+        lastMetalItem.Initialize(iconImages[1], metals.Count - (metalCount * 10));
+
+        for (int i = 0; i < woodCount; i++)
+        {
+            InventoryItemStack clothItem = Instantiate(itemStack) as InventoryItemStack;
+            clothItem.gameObject.transform.SetParent(itemContent, false);
+            clothItem.Initialize(iconImages[2], 10);
+        }
+        InventoryItemStack lastClothItem = Instantiate(itemStack) as InventoryItemStack;
+        lastClothItem.gameObject.transform.SetParent(itemContent, false);
+        lastClothItem.Initialize(iconImages[2], cloths.Count - (clothCount * 10));
+
+        for (int i = 0; i < woodCount; i++)
+        {
+            InventoryItemStack tapItem = Instantiate(itemStack) as InventoryItemStack;
+            tapItem.gameObject.transform.SetParent(itemContent, false);
+            tapItem.Initialize(iconImages[3], 10);
+        }
+        InventoryItemStack lastTapItem = Instantiate(itemStack) as InventoryItemStack;
+        lastTapItem.gameObject.transform.SetParent(itemContent, false);
+        lastTapItem.Initialize(iconImages[3], taps.Count - (tapCount * 10));
     }
 }

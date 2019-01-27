@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6896941230391603686}
   - component: {fileID: 6572649027507745322}
   - component: {fileID: 8671778436022458243}
+  - component: {fileID: 6196842306265782044}
   m_Layer: 0
   m_Name: wood
   m_TagString: Item
@@ -93,6 +94,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemType: 0
+  animationName: wood_highlight
 --- !u!65 &6572649027507745322
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -104,8 +106,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.006886942, y: 0.1, z: 0.015}
-  m_Center: {x: 0, y: 0, z: 0.0075}
+  m_Size: {x: 0.02, y: 0.1, z: 0.002}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &8671778436022458243
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -122,3 +124,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &6196842306265782044
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6196842306265782043}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c7bc7ab4ca0ecd2448c0da951658f729, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
