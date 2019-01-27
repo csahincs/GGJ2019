@@ -23,11 +23,12 @@ public class Inventory : MonoBehaviour
         tires = new List<Item>();
 
         SetTestItems();
+        Initialize();
     }
 
     void SetTestItems()
     {
-        for (int itemIndex = 0; itemIndex < 500; itemIndex++)
+        for (int itemIndex = 0; itemIndex < 20; itemIndex++)
         {
             woods.Add(new Item(ITEM_TYPES.WOOD));
             metals.Add(new Item(ITEM_TYPES.METAL));
