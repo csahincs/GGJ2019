@@ -14,27 +14,41 @@ public enum ITEM_TYPES
 
 public class Item : MonoBehaviour
 {
-    public Item(ITEM_TYPES it)
-    {
-        itemType = it;
-    }
+    public ITEM_TYPES itemType;
+    public string animationName;
+    private Animator itemAnimator;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        itemAnimator = GetComponent<Animator>();
+        itemAnimator.enabled = false;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.CompareTag("Player"))
+        {
+            itemAnimator.enabled = true;
+            itemAnimator.Play(animationName);
+        }
     }
 
-    private void OnTiggerEnter(Collider col)
+    private void OnTriggerStay(Collider other)
     {
-        Debug.Log("AHAHAHAHA");
+        if (other.CompareTag("Player") && Input.GetButtonDown("Jump"))
+        {
+            Destroy(gameObject);//TODO do inventory related things here.
+        }
     }
 
-    public ITEM_TYPES itemType;
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            itemAnimator.enabled = false;
+            gameObject.SetActive(false);
+            gameObject.SetActive(true);
+        }
+    }
 }

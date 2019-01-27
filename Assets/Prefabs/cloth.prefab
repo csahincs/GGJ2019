@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5566983348027586044}
   - component: {fileID: 8610023401457784150}
   - component: {fileID: 8750431758937978623}
+  - component: {fileID: 8646818240853631593}
   m_Layer: 0
   m_Name: cloth
   m_TagString: Item
@@ -93,6 +94,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemType: 2
+  animationName: cloth_highlight
 --- !u!65 &8610023401457784150
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -104,7 +106,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.003, y: 0.1, z: 0.015}
+  m_Size: {x: -0.02, y: 0.1, z: 0.015}
   m_Center: {x: 0, y: 0, z: 0.0075}
 --- !u!54 &8750431758937978623
 Rigidbody:
@@ -122,3 +124,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &8646818240853631593
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8646818240853631592}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f01efa16986c6fe41986b2ee88664698, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
