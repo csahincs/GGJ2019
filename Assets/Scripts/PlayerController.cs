@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class PlayerController : MonoBehaviour
 
 
     private bool canClimb = false;
+    private bool canFinish = false;
     private bool climbing = false;
 
     public bool isIdling = true;
@@ -102,6 +104,11 @@ public class PlayerController : MonoBehaviour
 
         if (Event.current.Equals(Event.KeyboardEvent("space")))
         {
+            if (canFinish) {
+                //finish game, teleport player to garage.
+                SceneManager.LoadScene(2);
+            }
+
             if (collidingItem != null)
             {
                 switch (collidingItem.itemType)
@@ -181,6 +188,11 @@ public class PlayerController : MonoBehaviour
             canClimb = true;
         }
 
+        if (dataFromCollider.gameObject.tag == "Finish")
+        {
+            canFinish = true;
+        }
+
         if (dataFromCollider.gameObject.tag == "Item")
         {
             collidingItem = dataFromCollider.gameObject.GetComponent<Item>();
@@ -200,6 +212,11 @@ public class PlayerController : MonoBehaviour
         {
             canClimb = false;
             Debug.Log("123");
+        }
+
+        if (dataFromCollider.gameObject.tag == "Finish")
+        {
+            canFinish = false;
         }
     }
 
