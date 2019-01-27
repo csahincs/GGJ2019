@@ -15,7 +15,8 @@ public enum ITEM_TYPES
 public class Item : MonoBehaviour
 {
     public ITEM_TYPES itemType;
-
+<<<<<<< HEAD
+=======
     public string animationName;
     private Animator itemAnimator;
 
@@ -52,4 +53,5 @@ public class Item : MonoBehaviour
             gameObject.SetActive(true);
         }
     }
+>>>>>>> 83741382b7bc477835a622d96c8bbd08918ead4b
 }

@@ -23,8 +23,12 @@ public class Inventory : MonoBehaviour
         cloths = new List<Item>();
         taps = new List<Item>();
         tires = new List<Item>();
+<<<<<<< HEAD
+=======
 
+        SetTestItems();
         Initialize();
+>>>>>>> 83741382b7bc477835a622d96c8bbd08918ead4b
     }
 
     public void SetTestItems()
@@ -38,7 +42,11 @@ public class Inventory : MonoBehaviour
             Item metal = new Item();
             metal.itemType = ITEM_TYPES.METAL;
             metals.Add(metal);
+<<<<<<< HEAD
+            
+=======
 
+>>>>>>> 83741382b7bc477835a622d96c8bbd08918ead4b
             Item cloth = new Item();
             cloth.itemType = ITEM_TYPES.CLOTH;
             cloths.Add(cloth);
@@ -46,7 +54,11 @@ public class Inventory : MonoBehaviour
             Item tap = new Item();
             tap.itemType = ITEM_TYPES.TAP;
             taps.Add(tap);
+<<<<<<< HEAD
+            
+=======
 
+>>>>>>> 83741382b7bc477835a622d96c8bbd08918ead4b
             Item tire = new Item();
             tire.itemType = ITEM_TYPES.TIRE;
             tires.Add(tire);
