@@ -7,12 +7,13 @@ public class CraftItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
 {
     public Button craftBtn;
     public Tooltip tooltip;
+    public Image image;
 
-    public void Initialize(List<int> itemCounts) // [0] -> Wood, [1] -> Metal, [2] -> Cloth, [3] -> Tap, [4] -> Tire
+    public void Initialize(List<int> itemCounts, Sprite icon) // [0] -> Wood, [1] -> Metal, [2] -> Cloth, [3] -> Tap, [4] -> Tire
     {
         craftBtn.onClick.RemoveAllListeners();
         craftBtn.onClick.AddListener(CraftBtnClicked);
-
+        image.sprite = icon;
         tooltip.Initialize(itemCounts);
     }
 

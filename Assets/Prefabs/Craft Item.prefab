@@ -293,6 +293,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   craftBtn: {fileID: 331456120259036604}
   tooltip: {fileID: 1966100896580850380}
+  image: {fileID: 6472657092475802369}
 --- !u!1 &2347381162547077822
 GameObject:
   m_ObjectHideFlags: 0

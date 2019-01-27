@@ -38,9 +38,9 @@ public class GarageController : MonoBehaviour
             craftManager.CraftTires();
         }
 
-        if (Event.current.Equals(Event.KeyboardEvent("f1")))
+        /*if (Event.current.Equals(Event.KeyboardEvent("f1")))
         {
             craftManager.Cheat();
-        }
+        }*/
     }
 }

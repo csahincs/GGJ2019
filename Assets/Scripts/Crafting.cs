@@ -11,19 +11,19 @@ public class Crafting : MonoBehaviour
     private Button tiresBtn;
     private Button cabinBtn;
 
-
     public CraftItem craftItem;
     public Transform craftItemContent;
     public CraftManager craftManager;
-    
+
+    public GameObject bathCabin;
+    public GameObject cabinet;
+    public GameObject upperBed;
+    public GameObject lowerBed;
+    public GameObject tires;
+    public GameObject cabin;
 
 
-    public List<int> bathCabinResources = new List<int>() { 10, 10, 15, 10, 10 };
-    public List<int> cabinetResources = new List<int>() { 10, 10, 15, 10, 10 };
-    public List<int> upperBedResources = new List<int>() { 10, 10, 15, 10, 10 };
-    public List<int> lowerBedResources = new List<int>() { 10, 10, 15, 10, 10 };
-    public List<int> tiresResources = new List<int>() { 10, 10, 15, 10, 10 };
-    public List<int> cabinResources = new List<int>() { 10, 10, 15, 10, 10 };
+    public Sprite[] icons;
 
     public void Start()
     {
@@ -58,38 +58,36 @@ public class Crafting : MonoBehaviour
     {
         CraftItem bathCabinItem = Instantiate(craftItem) as CraftItem;
         bathCabinItem.transform.SetParent(craftItemContent, false);
-        bathCabinItem.Initialize(bathCabinResources);
+        bathCabinItem.Initialize(craftManager.showerResources, icons[0]);
         bathCabinBtn = bathCabinItem.GetComponent<Button>();
 
         CraftItem cabinetItem = Instantiate(craftItem) as CraftItem;
         cabinetItem.transform.SetParent(craftItemContent, false);
-        cabinetItem.Initialize(cabinetResources);
+        cabinetItem.Initialize(craftManager.cabinetResources, icons[1]);
         cabinetBtn = cabinetItem.GetComponent<Button>();
 
 
         CraftItem upperBedItem = Instantiate(craftItem) as CraftItem;
         upperBedItem.transform.SetParent(craftItemContent, false);
-        upperBedItem.Initialize(upperBedResources);
+        upperBedItem.Initialize(craftManager.upperBedResources, icons[2]);
         upperBedBtn = upperBedItem.GetComponent<Button>();
 
 
         CraftItem lowerBedItem = Instantiate(craftItem) as CraftItem;
         lowerBedItem.transform.SetParent(craftItemContent, false);
-        lowerBedItem.Initialize(lowerBedResources);
+        lowerBedItem.Initialize(craftManager.lowerBedResources, icons[3]);
         lowerBedBtn = lowerBedItem.GetComponent<Button>();
 
 
         CraftItem tiresItem = Instantiate(craftItem) as CraftItem;
         tiresItem.transform.SetParent(craftItemContent, false);
-        tiresItem.Initialize(tiresResources);
+        tiresItem.Initialize(craftManager.tiresResources, icons[4]);
         tiresBtn = tiresItem.GetComponent<Button>();
 
 
         CraftItem cabinItem = Instantiate(craftItem) as CraftItem;
         cabinItem.transform.SetParent(craftItemContent, false);
-        cabinItem.Initialize(cabinResources);
+        cabinItem.Initialize(craftManager.vanCabinResources, icons[5]);
         cabinBtn = cabinItem.GetComponent<Button>();
     }
-
-    
 }
