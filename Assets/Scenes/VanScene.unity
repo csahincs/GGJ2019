@@ -337,18 +337,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1272962883}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &490989130 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1502727694, guid: e03f8c0a027bd60408bc0ca4e1f87f31,
-    type: 3}
-  m_PrefabInstance: {fileID: 246081405}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d52a4a4df21340044ae18d5dc1e6a69d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &621934123
 GameObject:
   m_ObjectHideFlags: 0
@@ -484,12 +472,12 @@ MonoBehaviour:
     type: 3}
   craftItemContent: {fileID: 714069792}
   craftManager: {fileID: 2758815434298247552}
-  bathCabin: {fileID: 0}
-  cabinet: {fileID: 0}
-  upperBed: {fileID: 0}
-  lowerBed: {fileID: 0}
-  tires: {fileID: 0}
-  cabin: {fileID: 0}
+  bathCabin: {fileID: 1053598941}
+  cabinet: {fileID: 732005796}
+  upperBed: {fileID: 1440373218}
+  lowerBed: {fileID: 1297266555}
+  tires: {fileID: 1554538868}
+  cabin: {fileID: 1502322524}
   icons:
   - {fileID: 21300000, guid: 6425a9b7779585d449e97277b90021fd, type: 3}
   - {fileID: 21300000, guid: caa67204da0425a4da3f9fef6fb21845, type: 3}
@@ -1373,6 +1361,36 @@ PrefabInstance:
       propertyPath: m_Name
       value: Van
       objectReference: {fileID: 0}
+    - target: {fileID: 7201821140210466178, guid: 0e7a7ff79c014c04ea16d1c07c00f750,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7201821141310969354, guid: 0e7a7ff79c014c04ea16d1c07c00f750,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7201821141577589812, guid: 0e7a7ff79c014c04ea16d1c07c00f750,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7201821141820047855, guid: 0e7a7ff79c014c04ea16d1c07c00f750,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7201821141961905916, guid: 0e7a7ff79c014c04ea16d1c07c00f750,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7201821141848132381, guid: 0e7a7ff79c014c04ea16d1c07c00f750,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7201821140420869645, guid: 0e7a7ff79c014c04ea16d1c07c00f750,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1428,36 +1446,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7201821140210466178, guid: 0e7a7ff79c014c04ea16d1c07c00f750,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7201821141310969354, guid: 0e7a7ff79c014c04ea16d1c07c00f750,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7201821141577589812, guid: 0e7a7ff79c014c04ea16d1c07c00f750,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7201821141820047855, guid: 0e7a7ff79c014c04ea16d1c07c00f750,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7201821141848132381, guid: 0e7a7ff79c014c04ea16d1c07c00f750,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7201821141961905916, guid: 0e7a7ff79c014c04ea16d1c07c00f750,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2039020116, guid: 0e7a7ff79c014c04ea16d1c07c00f750, type: 3}
     - {fileID: 611813511, guid: 0e7a7ff79c014c04ea16d1c07c00f750, type: 3}
@@ -1482,7 +1470,7 @@ PrefabInstance:
         type: 3}
       propertyPath: userInventory
       value: 
-      objectReference: {fileID: 490989130}
+      objectReference: {fileID: 621934125}
     - target: {fileID: 2758815434298247552, guid: 2e81652eaf92a65418da6aa8c24e043e,
         type: 3}
       propertyPath: tires
