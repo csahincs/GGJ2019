@@ -17,19 +17,31 @@ public class Inventory : MonoBehaviour
         cloths = new List<Item>();
         taps = new List<Item>();
         tires = new List<Item>();
-
-        SetTestItems();
     }
 
-    void SetTestItems()
+    public void SetTestItems()
     {
         for (int itemIndex = 0; itemIndex < 500; itemIndex++)
         {
-            woods.Add(new Item(ITEM_TYPES.WOOD));
-            metals.Add(new Item(ITEM_TYPES.METAL));
-            cloths.Add(new Item(ITEM_TYPES.CLOTH));
-            taps.Add(new Item(ITEM_TYPES.TAP));
-            tires.Add(new Item(ITEM_TYPES.TIRE));
+            Item wood = new Item();
+            wood.itemType = ITEM_TYPES.WOOD;
+            woods.Add(wood);
+
+            Item metal = new Item();
+            metal.itemType = ITEM_TYPES.METAL;
+            metals.Add(metal);
+            
+            Item cloth = new Item();
+            cloth.itemType = ITEM_TYPES.CLOTH;
+            cloths.Add(cloth);
+
+            Item tap = new Item();
+            tap.itemType = ITEM_TYPES.TAP;
+            taps.Add(tap);
+            
+            Item tire = new Item();
+            tire.itemType = ITEM_TYPES.TIRE;
+            tires.Add(tire);
         }
     }
 

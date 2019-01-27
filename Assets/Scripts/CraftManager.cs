@@ -20,27 +20,48 @@ public class CraftManager : MonoBehaviour
 
     public void CraftVanShower()
     {
-        if (!shower.gameObject.activeInHierarchy) shower.gameObject.SetActive(shower.Craft(userInventory));
+        if (!vanCabin.gameObject.activeInHierarchy)
+        {
+            Debug.Log("You need to craft the Van Cabin first!");
+        }
+        else if (!shower.gameObject.activeInHierarchy) shower.gameObject.SetActive(shower.Craft(userInventory));
     }
 
     public void CraftVanBedWithCabinet()
     {
-        if (!lowerBedWithCabinet.gameObject.activeInHierarchy) lowerBedWithCabinet.gameObject.SetActive(lowerBedWithCabinet.Craft(userInventory));
+        if (!vanCabin.gameObject.activeInHierarchy)
+        {
+            Debug.Log("You need to craft the Van Cabin first!");
+        }
+        else if (!lowerBedWithCabinet.gameObject.activeInHierarchy) lowerBedWithCabinet.gameObject.SetActive(lowerBedWithCabinet.Craft(userInventory));
     }
 
     public void CraftVanUpperBed()
     {
-        if (!upperBed.gameObject.activeInHierarchy) upperBed.gameObject.SetActive(upperBed.Craft(userInventory));
+        if (!vanCabin.gameObject.activeInHierarchy)
+        {
+            Debug.Log("You need to craft the Van Cabin first!");
+        }
+        else if (!upperBed.gameObject.activeInHierarchy) upperBed.gameObject.SetActive(upperBed.Craft(userInventory));
     }
 
     public void CraftCabinet()
     {
-        if (!cabinet.gameObject.activeInHierarchy) cabinet.gameObject.SetActive(cabinet.Craft(userInventory));
+        if (!vanCabin.gameObject.activeInHierarchy)
+        {
+            Debug.Log("You need to craft the Van Cabin first!");
+        }
+        else if (!cabinet.gameObject.activeInHierarchy) cabinet.gameObject.SetActive(cabinet.Craft(userInventory));
     }
 
     public void CraftTires()
     {
         if (!tires.gameObject.activeInHierarchy) tires.gameObject.SetActive(tires.Craft(userInventory));
     }
-    
+
+    public void Cheat()
+    {
+        userInventory.SetTestItems();
+        userInventory.PrintItems();
+    }
 }
