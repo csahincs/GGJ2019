@@ -24,13 +24,11 @@ public class CraftItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        Debug.Log("asd");
         tooltip.gameObject.SetActive(true);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        Debug.Log("132");
         tooltip.gameObject.SetActive(false);
     }
 }
